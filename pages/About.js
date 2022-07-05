@@ -1,9 +1,15 @@
 import Layout from "../components/Layout";
 
-export default function About() {
-	return (
-		<Layout>
-			<p>This is the about page</p>
-		</Layout>
-	)
-};
+export default function About({ message }) {
+    return (
+        <div>
+            <h1>{message}</h1>
+        </div>
+    );
+}
+    
+export function getServerSideProps() {
+    return {
+        props: { message: "Welcome to the About Page" },
+    };
+}
